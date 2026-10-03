@@ -38,4 +38,9 @@ internal class InternationalShipment : Shipment
         Console.WriteLine($"CustomsFee: {CustomsFee}");
     }
 
+    public virtual void GenerateCustomsReport()
+    {
+       
+    }
+
 }
