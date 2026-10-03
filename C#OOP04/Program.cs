@@ -96,6 +96,17 @@ internal class Program
         foreach (Shipment shipment in mixShipments)
             shipment.PrintShipment();
 
+        Console.WriteLine("\n-----------------------------------\n");
+
+        // l. Demonstrate the sealed class and sealed method (comments or code).
+        Console.WriteLine("------Printing Sealed CompletedShipment");
+        CompletedShipment completedShipment = new CompletedShipment("T04", "Furniture", 10, 100, new DeliveryAddress("Cairo", "Main street", 15));
+        completedShipment.PrintShipment();
+
+        // Sealed method example
+        Console.WriteLine("\n------ Printing PriorityInternationalShipment ------\n");
+        PriorityInternationalShipment priorityShipment = new PriorityInternationalShipment("T05", "Electronics", 5, 80, new DeliveryAddress("Giza", "Nile street", 20), "USA", 100);
+        priorityShipment.GenerateCustomsReport();
         #endregion
     }
 }
