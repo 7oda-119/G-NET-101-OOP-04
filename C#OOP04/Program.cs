@@ -29,6 +29,17 @@ internal class Program
 
 
         #endregion
+        #region Question02
+        /* a) What is the purpose of the sealed keyword when applied to a class?
+         *    Answeer: The sealed keyword prevents a class from being inherited.
+         *  
+         * b) What is the difference between a sealed class and a sealed method?
+         *    Answer: A sealed class cannot be inherited, while a sealed method can be inherited but cannot be overridden in derived classes.
+         *    
+         * c) Can a sealed method be overridden? Why?
+         *    Anser: No, a sealed method cannot be overridden because the sealed keyword prevents further customization of the method in derived classes. It is used to ensure that the implementation of the method remains unchanged in the inheritance hierarchy.
+        */
+        #endregion
         #endregion
 
         #region Practical Questions
