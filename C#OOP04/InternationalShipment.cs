@@ -23,7 +23,7 @@ internal class InternationalShipment : Shipment
         }
     }
 
-    public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;  // Adde from Assignment02
+    public override decimal EstimatedCost => (DeliveryFee + (Weight * 5) + CustomsFee); 
     public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string destinationCountry, decimal customsFee) : base(trackingCode, description, weight, deliveryFee, destination)  //Added from previous Assignment
     {
         DestinationCountry = destinationCountry;
@@ -33,7 +33,12 @@ internal class InternationalShipment : Shipment
     public override void PrintShipment()
     {
         Console.WriteLine("=== International Shipment Details ===");
-        base.PrintShipment();
+        Console.WriteLine($"TracingCode: {TrackingCode}");
+        Console.WriteLine($"Description: {Description}");
+        Console.WriteLine($"Weight: {Weight}");
+        Console.WriteLine($"DeliveryFee: {DeliveryFee}");
+        Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
+        Console.WriteLine($"EstimatedCost: {EstimatedCost}");
         Console.WriteLine($"DestinationCountry: {DestinationCountry}");
         Console.WriteLine($"CustomsFee: {CustomsFee}");
     }

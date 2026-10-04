@@ -18,12 +18,17 @@ internal class ExpressShipment : Shipment
         }
     }
 
-    public override decimal EstimatedCost => base.EstimatedCost + ExtraFee;  // Adde from Assignment02
+    public override decimal EstimatedCost => (DeliveryFee + (Weight * 5) + ExtraFee); 
 
     public override void PrintShipment()
     {
         Console.WriteLine("=== Express Shipment Details ===");
-        base.PrintShipment();
+        Console.WriteLine($"TracingCode: {TrackingCode}");
+        Console.WriteLine($"Description: {Description}");
+        Console.WriteLine($"Weight: {Weight}");
+        Console.WriteLine($"DeliveryFee: {DeliveryFee}");
+        Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
+        Console.WriteLine($"EstimatedCost: {EstimatedCost}");
         Console.WriteLine($"ExtraFee: {ExtraFee}");
     }
 
