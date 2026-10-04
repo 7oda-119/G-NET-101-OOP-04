@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class ExpressShipment : Shipment, ITrackable
+internal class ExpressShipment : Shipment, ITrackable, IInsurable
 {
     decimal extraFee;
     public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal extraFee) : base(trackingCode, description, weight, deliveryFee, destination)  //Added from previous Assignment 
@@ -37,4 +37,8 @@ internal class ExpressShipment : Shipment, ITrackable
         return $"Shipment {TrackingCode} is Out for Delivery";
     }
 
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.08m;
+    }
 }

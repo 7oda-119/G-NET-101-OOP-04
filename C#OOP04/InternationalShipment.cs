@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class InternationalShipment : Shipment, ITrackable
+internal class InternationalShipment : Shipment, ITrackable, IInsurable
 {
     string destinationCountry;
     decimal customsFee;
@@ -53,4 +53,8 @@ internal class InternationalShipment : Shipment, ITrackable
        
     }
 
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.12m;
+    }
 }

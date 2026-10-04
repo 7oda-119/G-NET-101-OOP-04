@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class StandardShipment : Shipment, ITrackable
+internal class StandardShipment : Shipment, ITrackable, IInsurable
 {
     public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination) : base(trackingCode, description, weight, deliveryFee, destination)  //Added from previous Assignment
     {
@@ -22,5 +22,10 @@ internal class StandardShipment : Shipment, ITrackable
     public string GetTrackingStatus()
     {
         return $"Shipment {TrackingCode} is Ready";
+    }
+
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.05m;
     }
 }
