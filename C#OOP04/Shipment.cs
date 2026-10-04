@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class Shipment
+internal abstract class Shipment
 {
     string trackingCode;
     string description;
