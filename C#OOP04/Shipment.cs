@@ -88,10 +88,7 @@ internal abstract class Shipment
     }
 
     // Calculated Properity
-    public virtual decimal EstimatedCost    // Add the virtual keyword to EstimatedCost so the property can be overridden
-    {
-        get => (deliveryFee + (weight * 5));
-    }
+    public abstract decimal EstimatedCost { get; }
 
     #endregion
 
@@ -106,16 +103,7 @@ internal abstract class Shipment
             DeliveryFee = newFee;
     }
 
-    public virtual void PrintShipment()        // Add the virtual keyword to PrintShipment so the method can be overridden
-    {
-        Console.WriteLine($"TracingCode: {TrackingCode}");
-        Console.WriteLine($"Description: {Description}");
-        Console.WriteLine($"Weight: {Weight}");
-        Console.WriteLine($"DeliveryFee: {DeliveryFee}");
-        Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
-        Console.WriteLine($"EstimatedCost: {EstimatedCost}");
-
-    }
+    public abstract void PrintShipment();
     #endregion
 
     #region UpdateWeight
