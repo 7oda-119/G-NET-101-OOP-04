@@ -53,6 +53,30 @@ internal class Program
          *              Maked code more maintainable which can modify by allowing updates to the internal code later affecting all classes that use the abstraction.
          */
         #endregion
+        #region Question02
+        /*   a) What is the difference between an Abstract Class and an Interface?
+         *      Answer: Abstract Class: Can have both abstract and concrete methods, can have fields, constructors, and access modifiers. 
+         *                              Abstract methods must be implemented by derived classes.
+         *                              Members can have different access modifiers (public, protected, private).
+         *                              Not support multiple inheritance.
+         *                              It is used when there is a common base class with shared implementation. 
+         *                              
+         *      
+         *              Interface: Can only have abstract methods (before C# 8), default methods, and constants.
+         *                         Methods must be implemented by implementing classes.
+         *                         Members are public by default and cannot have access modifiers.
+         *                         Supports multiple inheritance.
+         *                         It is used to define a contract that implementing classes must follow. 
+         *                         
+         *  b) When would you choose an Interface instead of an Abstract Class?
+         *  Answer: You would choose an Interface when you want to define a contract that multiple classes can implement, especially when those classes are not related. 
+         *          Interfaces are also preferred when you need to support multiple inheritance, as a class can implement multiple interfaces but can only inherit from one abstract class.
+         *          
+         *  c) Can a class inherit from multiple abstract classes? Can it implement multiple interfaces?
+         *     Answer: A class cannot inherit from multiple abstract classes to avoi the diamond problem (when a class inherits from two classes that have a same method or property, the compiler will not know which one should use).
+         *             But a class can implement multiple interfaces, allowing it to inherit behavior from multiple interfaces, avoiding the diamond problem because interfaces do not provide implementation.
+         */
+        #endregion
 
         #endregion
         #endregion
