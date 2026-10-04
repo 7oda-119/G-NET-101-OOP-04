@@ -94,6 +94,23 @@ internal class DeliveryCenter
     }
     #endregion
 
+    #region GetTrackingStatus of each Shipment
+    public void PrintTrackingStatuses()
+    {
+        bool hasShipment = false;
+        foreach (var shipment in shipments)
+        {
+            if (shipment != null)
+            {
+                Console.WriteLine(((ITrackable)shipment).GetTrackingStatus());   //explicitly cast to ITrackable to call GetTrackingStatus method
+                hasShipment = true;
+            }
+        }
+        if (!hasShipment)
+            Console.WriteLine("No shipments stored in this center.");
+    } 
+    #endregion
+
     public void AssignDriver(Driver driver)
     {
         DriverInfo = driver;
