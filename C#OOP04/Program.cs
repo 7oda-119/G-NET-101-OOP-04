@@ -40,6 +40,21 @@ internal class Program
          *    Anser: No, a sealed method cannot be overridden because the sealed keyword prevents further customization of the method in derived classes. It is used to ensure that the implementation of the method remains unchanged in the inheritance hierarchy.
         */
         #endregion
+
+        #region OOP04 Theoretical
+        #region Question01
+        /*   a) What is Abstraction in Object-Oriented Programming?
+         *      Answer:The process of hiding the implementation details and showing only the essential features of an object or system. 
+         *              It allows developers to focus on what an object does rather than how it does it.
+         *              
+         *   b) Why is abstraction considered one of the four pillars of OOP?
+         *      Answer: Abstraction is considered one of the four pillars of OOP because it provides a way to simplify complex systems by focusing on the essential features without worrying about the implementation details.
+         *              its also promotes Reusability by providing a shared template that multiple classes can use and reducing code duplication.
+         *              Maked code more maintainable which can modify by allowing updates to the internal code later affecting all classes that use the abstraction.
+         */
+        #endregion
+
+        #endregion
         #endregion
 
         #region Practical Questions
