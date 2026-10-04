@@ -147,5 +147,57 @@ internal class Program
         //PriorityInternationalShipment priorityShipment = new PriorityInternationalShipment("T05", "Electronics", 5, 80, new DeliveryAddress("Giza", "Nile street", 20), "USA", 100);
         //priorityShipment.GenerateCustomsReport();
         #endregion
+
+        #region OOP04 Practicat Questions
+
+        // a. Create one StandardShipment.
+        StandardShipment standardShipment = new StandardShipment("T01", "Books", 3.5m, 30m, new DeliveryAddress("Cairo", "Tahrir street", 10));
+
+        // b. Create one ExpressShipment.
+        ExpressShipment expressShipment = new ExpressShipment("T02", "Laptop", 2.0m, 40m, new DeliveryAddress("Giza", "Nile street", 5), 20m);
+
+        // c. Create one InternationalShipment.
+        InternationalShipment internationalShipment = new InternationalShipment("T03", "Clothes", 4.5m, 50m, new DeliveryAddress("Alex", "Corniche", 8), "France", 60m);
+
+        // d. Add all shipments to the DeliveryCenter.
+        DeliveryCenter deliveryCenter = new DeliveryCenter();
+        deliveryCenter.AddShipment(standardShipment);
+        deliveryCenter.AddShipment(expressShipment);
+        deliveryCenter.AddShipment(internationalShipment);
+
+        // e.Print all shipment details.
+        deliveryCenter.PrintAllShipments();
+
+        Console.WriteLine("\n-----------------------------------\n");
+
+        // f. Print the tracking status of every shipment.
+        deliveryCenter.PrintTrackingStatuses();
+
+        Console.WriteLine("\n-----------------------------------\n");
+
+        // g. Print the insurance cost of every shipment.
+        DeliveryReport.PrintInsurance(standardShipment);
+        DeliveryReport.PrintInsurance(expressShipment);
+        DeliveryReport.PrintInsurance(internationalShipment);
+
+        Console.WriteLine("\n-----------------------------------\n");
+
+        // h. Store the shipment objects in an ITrackable[] array and print their tracking statuses.
+        ITrackable[] trackableShipments = { standardShipment, expressShipment, internationalShipment };
+        foreach (ITrackable shipment in trackableShipments)
+        {
+            Console.WriteLine(shipment.GetTrackingStatus());
+        }
+
+        Console.WriteLine("\n-----------------------------------\n");
+
+        // i. Store the shipment objects in an IInsurable[] array and print their insurance values.
+        IInsurable[] insurablesShipments = { standardShipment, expressShipment, internationalShipment };
+        foreach (IInsurable shipment in insurablesShipments)
+        {
+            Console.WriteLine($"Insurance cost for shipment {((Shipment)shipment).TrackingCode}: {shipment.CalculateInsurance()}");
+        }
+
+        #endregion
     }
 }

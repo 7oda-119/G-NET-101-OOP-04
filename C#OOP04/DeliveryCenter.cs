@@ -6,6 +6,10 @@ internal class DeliveryCenter
     public string CenterName { get; set; }
     public Driver DriverInfo { get; set; }
 
+    public DeliveryCenter()
+    {
+        shipments = new Shipment[20];
+    }
     public DeliveryCenter(string centerName)
     {
         CenterName = centerName;
