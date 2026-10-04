@@ -4,8 +4,8 @@ internal class Shipment
 {
     string trackingCode;
     string description;
-    double weight;
-    double deliveryFee;
+    decimal weight;
+    decimal deliveryFee;
 
     #region Constructors
     //The first constructor receives only trackingCode.
@@ -24,7 +24,7 @@ internal class Shipment
         Destination = new DeliveryAddress("New York", "5th Avenue", 100);
     }
 
-    public Shipment(string trackingCode, string description, double weight, double deliveryFee, DeliveryAddress destination)
+    public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
     {
         if (string.IsNullOrWhiteSpace(trackingCode))
             throw new ArgumentNullException(nameof(trackingCode), "TrackingCode cannot be null or empty");
@@ -66,7 +66,7 @@ internal class Shipment
     }
 
     // Read-Write Properity
-    public double Weight
+    public decimal Weight
     {
         get => weight;
         set
@@ -77,7 +77,7 @@ internal class Shipment
     }
 
     // Read-private set properity  ==> can be accesed only in the same class
-    public double DeliveryFee
+    public decimal DeliveryFee
     {
         get => deliveryFee;
         private set
@@ -90,7 +90,7 @@ internal class Shipment
     // Calculated Properity
     public virtual decimal EstimatedCost    // Add the virtual keyword to EstimatedCost so the property can be overridden
     {
-        get => (decimal)(deliveryFee + (weight * 5));
+        get => (deliveryFee + (weight * 5));
     }
 
     #endregion
@@ -103,7 +103,7 @@ internal class Shipment
     public void UpdateDeliveryFee(decimal newFee)
     {
         if (newFee > 0)
-            DeliveryFee = (double)newFee;
+            DeliveryFee = newFee;
     }
 
     public virtual void PrintShipment()        // Add the virtual keyword to PrintShipment so the method can be overridden
@@ -119,11 +119,11 @@ internal class Shipment
     #endregion
 
     #region UpdateWeight
-    public void UpdateWeight(double weight)
+    public void UpdateWeight(decimal weight)
     {
         Weight = weight;
     }
-    public void UpdateWeight(double weight, double packingWeigh)
+    public void UpdateWeight(decimal weight, decimal packingWeigh)
     {
         Weight = weight + packingWeigh;
     }

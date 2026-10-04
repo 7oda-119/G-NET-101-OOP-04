@@ -81,71 +81,71 @@ internal class Program
         #endregion
         #endregion
 
-        #region Practical Questions
-        //a. Create a Driver.
-        Driver driver = new Driver("Ahmed");
+        #region OOP03 Practical Questions
+        ////a. Create a Driver.
+        //Driver driver = new Driver("Ahmed");
 
-        //  b. Create a DeliveryCenter.
-        DeliveryCenter deliveryCenter = new DeliveryCenter("Cairo Main Center");
+        ////  b. Create a DeliveryCenter.
+        //DeliveryCenter deliveryCenter = new DeliveryCenter("Cairo Main Center");
 
-        //c. Assign the Driver to the DeliveryCenter.
-        deliveryCenter.AssignDriver(driver);
+        ////c. Assign the Driver to the DeliveryCenter.
+        //deliveryCenter.AssignDriver(driver);
 
-        // d. Create one StandardShipment.
-        StandardShipment standardShipment = new StandardShipment("T01", "Books", 3.5, 30, new DeliveryAddress("Cairo", "Tahrir street", 10));
+        //// d. Create one StandardShipment.
+        //StandardShipment standardShipment = new StandardShipment("T01", "Books", 3.5, 30, new DeliveryAddress("Cairo", "Tahrir street", 10));
 
-        // e. Create one ExpressShipment.
-        ExpressShipment expressShipment = new ExpressShipment("T02", "Laptop", 2.0, 40, new DeliveryAddress("Giza", "Nile street", 5), 20);
+        //// e. Create one ExpressShipment.
+        //ExpressShipment expressShipment = new ExpressShipment("T02", "Laptop", 2.0, 40, new DeliveryAddress("Giza", "Nile street", 5), 20);
 
-        // f. Create one InternationalShipment.
-        InternationalShipment internationalShipment = new InternationalShipment("T03", "Clothes", 4.5, 50, new DeliveryAddress("Alex", "Corniche", 8), "France", 60);
+        //// f. Create one InternationalShipment.
+        //InternationalShipment internationalShipment = new InternationalShipment("T03", "Clothes", 4.5, 50, new DeliveryAddress("Alex", "Corniche", 8), "France", 60);
 
-        // g. Add all shipments to the DeliveryCenter.
-        deliveryCenter.AddShipment(standardShipment);
-        deliveryCenter.AddShipment(expressShipment);
-        deliveryCenter.AddShipment(internationalShipment);
+        //// g. Add all shipments to the DeliveryCenter.
+        //deliveryCenter.AddShipment(standardShipment);
+        //deliveryCenter.AddShipment(expressShipment);
+        //deliveryCenter.AddShipment(internationalShipment);
 
-        // h. Print all shipments using PrintAllShipments().
-        deliveryCenter.PrintAllShipments();
+        //// h. Print all shipments using PrintAllShipments().
+        //deliveryCenter.PrintAllShipments();
 
-        Console.WriteLine("\n-----------------------------------\n");
+        //Console.WriteLine("\n-----------------------------------\n");
 
-        // i. Call DeliveryHelper.PrintShipmentDetails() for each shipment.
-        Console.WriteLine("------Printing usig DeliveryHelper");
-        DeliveryHelper.PrintShipmentDetails(standardShipment);
-        DeliveryHelper.PrintShipmentDetails(expressShipment);
-        DeliveryHelper.PrintShipmentDetails(internationalShipment);
+        //// i. Call DeliveryHelper.PrintShipmentDetails() for each shipment.
+        //Console.WriteLine("------Printing usig DeliveryHelper");
+        //DeliveryHelper.PrintShipmentDetails(standardShipment);
+        //DeliveryHelper.PrintShipmentDetails(expressShipment);
+        //DeliveryHelper.PrintShipmentDetails(internationalShipment);
 
-        Console.WriteLine("\n-----------------------------------\n");
+        //Console.WriteLine("\n-----------------------------------\n");
 
-        // j.Demonstrate both versions of UpdateWeight().
-        Console.WriteLine($"Original weight: {standardShipment.Weight}");
+        //// j.Demonstrate both versions of UpdateWeight().
+        //Console.WriteLine($"Original weight: {standardShipment.Weight}");
 
-        standardShipment.UpdateWeight(4);      // version 1
-        Console.WriteLine($"Updated weight: {standardShipment.Weight}");
+        //standardShipment.UpdateWeight(4);      // version 1
+        //Console.WriteLine($"Updated weight: {standardShipment.Weight}");
 
-        standardShipment.UpdateWeight(2, 2.5);  // version 2
-        Console.WriteLine($"Updated weight after packing: {standardShipment.Weight}");
+        //standardShipment.UpdateWeight(2, 2.5);  // version 2
+        //Console.WriteLine($"Updated weight after packing: {standardShipment.Weight}");
 
-        Console.WriteLine("\n-----------------------------------\n");
+        //Console.WriteLine("\n-----------------------------------\n");
 
-        // k. Build a Shipment[] holding mixed types and print all of them in a loop.
-        Shipment[] mixShipments = { standardShipment, expressShipment, internationalShipment };
+        //// k. Build a Shipment[] holding mixed types and print all of them in a loop.
+        //Shipment[] mixShipments = { standardShipment, expressShipment, internationalShipment };
 
-        foreach (Shipment shipment in mixShipments)
-            shipment.PrintShipment();
+        //foreach (Shipment shipment in mixShipments)
+        //    shipment.PrintShipment();
 
-        Console.WriteLine("\n-----------------------------------\n");
+        //Console.WriteLine("\n-----------------------------------\n");
 
-        // l. Demonstrate the sealed class and sealed method (comments or code).
-        Console.WriteLine("------Printing Sealed CompletedShipment");
-        CompletedShipment completedShipment = new CompletedShipment("T04", "Furniture", 10, 100, new DeliveryAddress("Cairo", "Main street", 15));
-        completedShipment.PrintShipment();
+        //// l. Demonstrate the sealed class and sealed method (comments or code).
+        //Console.WriteLine("------Printing Sealed CompletedShipment");
+        //CompletedShipment completedShipment = new CompletedShipment("T04", "Furniture", 10, 100, new DeliveryAddress("Cairo", "Main street", 15));
+        //completedShipment.PrintShipment();
 
-        // Sealed method example
-        Console.WriteLine("\n------ Printing PriorityInternationalShipment ------\n");
-        PriorityInternationalShipment priorityShipment = new PriorityInternationalShipment("T05", "Electronics", 5, 80, new DeliveryAddress("Giza", "Nile street", 20), "USA", 100);
-        priorityShipment.GenerateCustomsReport();
+        //// Sealed method example
+        //Console.WriteLine("\n------ Printing PriorityInternationalShipment ------\n");
+        //PriorityInternationalShipment priorityShipment = new PriorityInternationalShipment("T05", "Electronics", 5, 80, new DeliveryAddress("Giza", "Nile street", 20), "USA", 100);
+        //priorityShipment.GenerateCustomsReport();
         #endregion
     }
 }
