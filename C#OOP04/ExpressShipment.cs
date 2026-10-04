@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class ExpressShipment : Shipment
+internal class ExpressShipment : Shipment, ITrackable
 {
     decimal extraFee;
     public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal extraFee) : base(trackingCode, description, weight, deliveryFee, destination)  //Added from previous Assignment 
@@ -18,7 +18,7 @@ internal class ExpressShipment : Shipment
         }
     }
 
-    public override decimal EstimatedCost => (DeliveryFee + (Weight * 5) + ExtraFee); 
+    public override decimal EstimatedCost => (DeliveryFee + (Weight * 5) + ExtraFee);
 
     public override void PrintShipment()
     {
@@ -30,6 +30,11 @@ internal class ExpressShipment : Shipment
         Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
         Console.WriteLine($"EstimatedCost: {EstimatedCost}");
         Console.WriteLine($"ExtraFee: {ExtraFee}");
+    }
+
+    public string GetTrackingStatus()
+    {
+        return $"Shipment {TrackingCode} is Out for Delivery";
     }
 
 }

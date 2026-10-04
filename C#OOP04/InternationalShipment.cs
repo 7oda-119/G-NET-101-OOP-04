@@ -1,6 +1,6 @@
 ﻿namespace C_OOP04;
 
-internal class InternationalShipment : Shipment
+internal class InternationalShipment : Shipment, ITrackable
 {
     string destinationCountry;
     decimal customsFee;
@@ -41,6 +41,11 @@ internal class InternationalShipment : Shipment
         Console.WriteLine($"EstimatedCost: {EstimatedCost}");
         Console.WriteLine($"DestinationCountry: {DestinationCountry}");
         Console.WriteLine($"CustomsFee: {CustomsFee}");
+    }
+
+    public string GetTrackingStatus()
+    {
+        return $"Shipment {TrackingCode} has been Delivered";
     }
 
     public virtual void GenerateCustomsReport()
